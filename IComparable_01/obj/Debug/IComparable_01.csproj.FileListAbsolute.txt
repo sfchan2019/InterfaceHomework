@@ -1,0 +1,6 @@
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\bin\Debug\IComparable_01.exe.config
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\bin\Debug\IComparable_01.exe
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\bin\Debug\IComparable_01.pdb
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\obj\Debug\IComparable_01.csprojResolveAssemblyReference.cache
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\obj\Debug\IComparable_01.exe
+C:\Users\Sing\Documents\Visual Studio 2015\Projects\Sparta Global\Week4\Day1\IComparable_01\IComparable_01\obj\Debug\IComparable_01.pdb
