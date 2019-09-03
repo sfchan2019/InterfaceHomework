@@ -43,8 +43,6 @@ namespace IComparable_01
                 if (Console.ReadLine() == "exit")
                     break;
             }
-
-
         }
 
         public class Item : IComparable
@@ -142,6 +140,5 @@ namespace IComparable_01
         {
             int CompareByLength(string str1, string str2);
         }
-
     }
 }
