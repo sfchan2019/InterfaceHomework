@@ -91,13 +91,13 @@ namespace IComparable_01
             public void CompareString(string str1, string str2)
             {
                 int alpOrder = CompareByName(str1, str2);
-                PrintResultByName(str1, str2, alpOrder);
+                PrintNameResult(str1, str2, alpOrder);
 
                 int len = CompareByLength(str1, str2);
-                PrintResultByLength(str1, str2, len);
+                PrintLengthResult(str1, str2, len);
             }
 
-            private void PrintResultByName(string str1, string str2, int result)
+            private void PrintNameResult(string str1, string str2, int result)
             {
                 string text;
                 switch (result)
@@ -118,7 +118,7 @@ namespace IComparable_01
 
                 Console.WriteLine(String.Format("{0} {1} {2} alphabetically", str1, text, str2));
             }
-            private void PrintResultByLength(string str1, string str2, int result)
+            private void PrintLengthResult(string str1, string str2, int result)
             {
                 string text;
                 switch (result)
