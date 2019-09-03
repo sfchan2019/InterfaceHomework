@@ -19,23 +19,21 @@ namespace IComparable_01
         {
             public void Run()
             {
-                Comparison comparison = new Comparison();
-
-                var a = new Item();
-                var b = new Item();
+                var a = new Comparison();
+                var b = new Comparison();
                 a.Name = "Bob";
                 b.Name = "Carly";
-                comparison.CompareString(a.Name, b.Name);
+                a.CompareString(b);
                 Console.WriteLine();
 
                 a.Name = "Carly";
                 b.Name = "Carly";
-                comparison.CompareString(a.Name, b.Name);
+                a.CompareString(b);
                 Console.WriteLine();
 
                 a.Name = "Edward";
                 b.Name = "Carly";
-                comparison.CompareString(a.Name, b.Name);
+                a.CompareString(b);
                 Console.WriteLine();
 
                 while (true)
@@ -44,7 +42,7 @@ namespace IComparable_01
                     a.Name = Console.ReadLine();
                     Console.WriteLine("Enter the name for item b");
                     b.Name = Console.ReadLine();
-                    comparison.CompareString(a.Name, b.Name);
+                    a.CompareString(b);
                     Console.WriteLine();
 
                     Console.WriteLine("Enter 1 to continue, anything else to exit program");
@@ -73,28 +71,31 @@ namespace IComparable_01
                 set { name = value; }
             }
 
-            public int CompareByName(string str1, string str2)
+            public int CompareByName(object obj)
             {
-                return String.Compare(str1, str2);
+                Comparison that = obj as Comparison;
+                return String.Compare(this.name, that.name);
             }
 
-            public int CompareByLength(string str1, string str2)
+            public int CompareByLength(object obj)
             {
-                if (str1.Length < str2.Length)
+                Comparison that = obj as Comparison;
+                if (this.name.Length < that.name.Length)
                     return -1;
-                else if (str1.Length == str2.Length)
+                else if (this.name.Length == that.name.Length)
                     return 0;
                 else
                     return 1;
             }
 
-            public void CompareString(string str1, string str2)
+            public void CompareString(object obj)
             {
-                int alpOrder = CompareByName(str1, str2);
-                PrintNameResult(str1, str2, alpOrder);
+                Comparison that = obj as Comparison;
+                int alpOrder = CompareByName(obj);
+                PrintNameResult(this.name, that.name, alpOrder);
 
-                int len = CompareByLength(str1, str2);
-                PrintLengthResult(str1, str2, len);
+                int len = CompareByLength(obj);
+                PrintLengthResult(this.name, that.name, len);
             }
 
             private void PrintNameResult(string str1, string str2, int result)
@@ -142,11 +143,12 @@ namespace IComparable_01
 
         interface ICompareByName
         {
-            int CompareByName(string str1, string str2);
+            int CompareByName(object obj);
         }
         interface ICompareByLength
         {
-            int CompareByLength(string str1, string str2);
+            int CompareByLength(object obj);
         }
+
     }
 }
