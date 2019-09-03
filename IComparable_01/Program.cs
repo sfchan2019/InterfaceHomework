@@ -17,20 +17,35 @@ namespace IComparable_01
             var b = new Item();
             a.Name = "Bob";
             b.Name = "Carly";
-            Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
+            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
             Console.WriteLine();
 
             a.Name = "Carly";
             b.Name = "Carly";
-            Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
+            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
             Console.WriteLine();
 
             a.Name = "Edward";
             b.Name = "Carly";
-            Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
+            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
+            Console.WriteLine();
+
+            while (true)
+            {
+                Console.WriteLine("Enter the name for item a");
+                a.Name = Console.ReadLine();
+                Console.WriteLine("Enter the name for item b");
+                b.Name = Console.ReadLine();
+                comparison.CompareString(a.Name, b.Name);
+                Console.WriteLine();
+                if (false)
+                    break;
+            }
+
+
         }
 
         public class Item : IComparable
