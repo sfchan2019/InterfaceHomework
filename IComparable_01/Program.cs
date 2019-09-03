@@ -17,19 +17,16 @@ namespace IComparable_01
             var b = new Item();
             a.Name = "Bob";
             b.Name = "Carly";
-            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
             Console.WriteLine();
 
             a.Name = "Carly";
             b.Name = "Carly";
-            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
             Console.WriteLine();
 
             a.Name = "Edward";
             b.Name = "Carly";
-            //Console.WriteLine("{0} compared to {1} is {2}", a.Name, b.Name, a.CompareTo(b));
             comparison.CompareString(a.Name, b.Name);
             Console.WriteLine();
 
@@ -41,7 +38,9 @@ namespace IComparable_01
                 b.Name = Console.ReadLine();
                 comparison.CompareString(a.Name, b.Name);
                 Console.WriteLine();
-                if (false)
+
+                Console.WriteLine("enter exit to quit the program, anything else to continue");
+                if (Console.ReadLine() == "exit")
                     break;
             }
 
