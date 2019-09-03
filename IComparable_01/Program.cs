@@ -11,40 +11,48 @@ namespace IComparable_01
     {
         static void Main(string[] args)
         {
-            Comparison comparison = new Comparison();
+            Application app = new Application();
+            app.Run();
+        }
 
-            var a = new Item();
-            var b = new Item();
-            a.Name = "Bob";
-            b.Name = "Carly";
-            comparison.CompareString(a.Name, b.Name);
-            Console.WriteLine();
-
-            a.Name = "Carly";
-            b.Name = "Carly";
-            comparison.CompareString(a.Name, b.Name);
-            Console.WriteLine();
-
-            a.Name = "Edward";
-            b.Name = "Carly";
-            comparison.CompareString(a.Name, b.Name);
-            Console.WriteLine();
-
-            while (true)
+        public class Application
+        {
+            public void Run()
             {
-                Console.WriteLine("Enter the name for item a");
-                a.Name = Console.ReadLine();
-                Console.WriteLine("Enter the name for item b");
-                b.Name = Console.ReadLine();
+                Comparison comparison = new Comparison();
+
+                var a = new Item();
+                var b = new Item();
+                a.Name = "Bob";
+                b.Name = "Carly";
                 comparison.CompareString(a.Name, b.Name);
                 Console.WriteLine();
 
-                Console.WriteLine("enter exit to quit the program, anything else to continue");
-                if (Console.ReadLine() == "exit")
-                    break;
+                a.Name = "Carly";
+                b.Name = "Carly";
+                comparison.CompareString(a.Name, b.Name);
+                Console.WriteLine();
+
+                a.Name = "Edward";
+                b.Name = "Carly";
+                comparison.CompareString(a.Name, b.Name);
+                Console.WriteLine();
+
+                while (true)
+                {
+                    Console.WriteLine("Enter the name for item a");
+                    a.Name = Console.ReadLine();
+                    Console.WriteLine("Enter the name for item b");
+                    b.Name = Console.ReadLine();
+                    comparison.CompareString(a.Name, b.Name);
+                    Console.WriteLine();
+
+                    Console.WriteLine("Enter 1 to continue, anything else to exit program");
+                    if (Console.ReadLine() != "1")
+                        break;
+                }
             }
         }
-
         public class Item : IComparable
         {
             public string Name;
@@ -108,7 +116,7 @@ namespace IComparable_01
                         return;
                 }
 
-                Console.WriteLine(String.Format("{0} {1} {2} in alphabetically order", str1, text, str2));
+                Console.WriteLine(String.Format("{0} {1} {2} alphabetically", str1, text, str2));
             }
             private void PrintResultByLength(string str1, string str2, int result)
             {
